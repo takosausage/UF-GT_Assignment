@@ -5,16 +5,19 @@ var Notification = {
 //where IS_SUSPENDED = 0 and (email_teacher = 'teacherleon@gmail.com' or email_student = 'commonstudent1@gmail.com' or email_student = 'commonstudent2@gmail.com');
         var queryString = "select distinct email from roster_student inner join teacher_assigned_students on ";
         queryString += "roster_student.email = teacher_assigned_students.email_student ";
-        queryString += "where IS_SUSPENDED = 0 and (email_teacher = '";
-        queryString += (email_teacher + "'");
+        queryString += "where IS_SUSPENDED = 0 and (email_teacher = ?'";
+        var consolidatedArray = [];
+        consolidatedArray.push(email_teacher);
         if(email_student != null){
             if(email_student instanceof Array){
                 for (var i = 0; i<email_student.length; ++i){
-                    queryString += (" or email_student = '" + email_student[i] + "'");
+                    queryString += (" or email_student = ?'");
+                    consolidatedArray.push(email_student[i]);
                 }
             }
             else if(email_student.length != 0){
-                queryString += (" or email_student = '" + email_student[i] + "'");
+                queryString += (" or email_student = ?'" + email_student + "'");
+                consolidatedArray.push(email_student);
             }
         }
         queryString += (");");

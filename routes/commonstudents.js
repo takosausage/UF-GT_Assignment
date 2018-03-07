@@ -10,20 +10,15 @@ router.get('/', function(req, res, next){
 
     if (teacherArry instanceof Array) {  
         //validate list of teacher email, send error if any student email is not valid
-        var teacherList = [];
         for(var i = 0, len = teacherArry.length; i < len; i++){
             if(!validateEmail(teacherArry[i])){
                 res.status(400);
                 res.send(JSON.stringify({"status": 400, "error": "One or more Student emails are invalid", "response": null}))
                 return;
             }
-            else {
-                teacherList.push([teacherArry[i]])
-            }
         }
-        Register.getRegisterByMultiTeacher(teacherList, function(err, rows) {  
+        Register.getRegisterByMultiTeacher(teacherArry, function(err, rows) {  
             if (err) {  
-                console.log(err);
                 res.status(500);
                 res.send(JSON.stringify({"status": 500, "error": "System/Database Error", "response": null}))
             } else {
