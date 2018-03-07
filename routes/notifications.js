@@ -26,18 +26,25 @@ router.post('/', function(req, res, next) {
     var pattern = /\B@[a-z0-9_@.-]+/gi;
     var studentList = notification.match(pattern);
     console.log(studentList);
+    var cleanStudentList = []
     //validate student email, send error if any student email is not valid
-    for(var i = 0, len = studentList.length; i < len; i++){
-        if(!validateEmail(studentList[i])){
-            res.status(400);
-            res.send(JSON.stringify({"status": 400, "error": "One or more Student emails are invalid", "response": null}))
-            return;
+    if (null != studentList){
+        for(var i = 0, len = studentList.length; i < len; i++){
+            if(!validateEmail(studentList[i].substr(1))){
+                res.status(400);
+                res.send(JSON.stringify({"status": 400, "error": "One or more Student emails are invalid", "response": null}))
+                return;
+            }
+            else{
+                cleanStudentList.push(studentList[i].substr(1));
+            }
         }
     }
-    console.log (studentList instanceof Array);
-    Notification.getNotification(teacher, studentList, function(err, rows) {  
+    console.log (cleanStudentList instanceof Array);
+    Notification.getNotification(teacher, cleanStudentList, function(err, rows) {  
                     if (err) {  
-                        res.send(JSON.stringify({"status": 500, "error": err, "response": null}));
+                        res.status(500);
+                        res.send(JSON.stringify({"status": 500, "error": "System/Database Error", "response": null}))
                     } else {  
                         var studentArry = [];
                         console.log(JSON.stringify(rows));

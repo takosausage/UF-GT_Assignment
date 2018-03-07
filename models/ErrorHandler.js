@@ -1,6 +1,6 @@
 var ErrorHandler = {
 
-    generate400Error: function(error){
+    generateError: function(error){
         return ({"errCode" : error.code, "errMsg" : error.message});
     }
 }

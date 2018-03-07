@@ -10,16 +10,22 @@ router.get('/', function(req, res, next){
 
     if (teacherArry instanceof Array) {  
         //validate list of teacher email, send error if any student email is not valid
+        var teacherList = [];
         for(var i = 0, len = teacherArry.length; i < len; i++){
             if(!validateEmail(teacherArry[i])){
                 res.status(400);
                 res.send(JSON.stringify({"status": 400, "error": "One or more Student emails are invalid", "response": null}))
                 return;
             }
+            else {
+                teacherList.push([teacherArry[i]])
+            }
         }
-        Register.getRegisterByMultiTeacher(teacherArry, function(err, rows) {  
+        Register.getRegisterByMultiTeacher(teacherList, function(err, rows) {  
             if (err) {  
-                res.json(err);  
+                console.log(err);
+                res.status(500);
+                res.send(JSON.stringify({"status": 500, "error": "System/Database Error", "response": null}))
             } else {
                 var studentArry = [];
                 console.log(JSON.stringify(rows));
@@ -31,7 +37,7 @@ router.get('/', function(req, res, next){
                 var students = {"Students": studentArry};
                 console.log(JSON.stringify(students));
                 res.setHeader('Content-Type', 'application/json');
-                res.json(JSON.stringify(students));
+                res.status(200).json(students);
             }  
         });  
     } else {  
@@ -42,8 +48,9 @@ router.get('/', function(req, res, next){
             return;
         }
         Register.getRegisterByTeacher(teacherArry, function(err, rows) {  
-            if (err) {  
-                res.json(err);  
+            if (err) { 
+                res.status(500);
+                res.send(JSON.stringify({"status": 500, "error": "System/Database Error", "response": null}))  
             } else {  
                 var studentArry = [];
                 console.log(JSON.stringify(rows));

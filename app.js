@@ -39,10 +39,10 @@ app.use('/', index);
 //app.use('/users', users);
 app.use('/Teacher', Teacher);
 app.use('/Student', Student);
-app.use('/Register', Register);
-app.use('/commonstudents', CommonStudent);
-app.use('/suspend', Suspend);
-app.use('/notifications', Notification);
+app.use('/api/register', Register);
+app.use('/api/commonstudents', CommonStudent);
+app.use('/api/suspend', Suspend);
+app.use('/api/notifications', Notification);
 
 app.disable( 'x-powered-by' ) ;
 

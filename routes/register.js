@@ -43,12 +43,22 @@ router.post('/', function(req, res, next) {
             return;
         }
     }
-    
+    var insertList = [];
+    if (studentArry instanceof Array){
+        for (var i = 0; i<studentArry.length; ++i){
+            insertList.push([teacher, studentArry[i]]);
+        }
+    }
+    else{
+        insertList.push([teacher, studentArry]);
+    }
     if (studentArry instanceof Array){
         //console.log("checking if students exists...");
-        Register.registerMultiStudent(teacher, studentArry, function(err, count) {  
+        Register.registerMultiStudent(insertList, function(err, count) {  
             if (err) { 
-                res.send(JSON.stringify({"status": 500, "error": err, "response": null}));
+                console.log(err);
+                res.status(500);
+                res.send(JSON.stringify({"status": 500, "error": "System/Database Error", "response": null}))
               }
             else{
                 res.status(204);
@@ -62,7 +72,8 @@ router.post('/', function(req, res, next) {
         Register.registerStudent(teacher, studentArry, function(err, count) {  
             console.log(studentArry);
             if (err) {  
-                res.send(JSON.stringify({"status": 500, "error": err, "response": null}));
+                res.status(500);
+                res.send(JSON.stringify({"status": 500, "error": "System/Database Error", "response": null}))
             } else {  
                 res.status(204); //or return count for 1 & 0
                 res.json(JSON.stringify(req.body));  

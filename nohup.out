@@ -1,0 +1,349 @@
+Ready on port 8185
+Ready on port 8185
+{ teacher: 'teacherken@gmail.com',
+  students: [ 'studentjon@example.com' ] }
+teacherken@gmail.com
+[ 'studentjon@example.com' ]
+Insert into teacher_assigned_students values('teacherken@gmail.com','studentjon@example.com');
+[0mPOST /register/ [32m200 [0m365.494 ms - 302[0m
+[0mPOST /api/register [33m404 [0m892.351 ms - 1125[0m
+[0mPOST /api/Register [33m404 [0m14.774 ms - 1125[0m
+[0mPOST /api/Register [33m404 [0m10.654 ms - 1125[0m
+[0mGET /api/commonstudents?teacher=t_1@gmail.com&teacher=t_2@gmail.com [33m404 [0m17.187 ms - 1125[0m
+[0mPOST /api/suspend [33m404 [0m10.134 ms - 1125[0m
+events.js:183
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE :::8185
+    at Object._errnoException (util.js:1022:11)
+    at _exceptionWithHostPort (util.js:1044:20)
+    at Server.setupListenHandle [as _listen2] (net.js:1351:14)
+    at listenInCluster (net.js:1392:12)
+    at Server.listen (net.js:1476:7)
+    at Function.listen (/home/yuchao.tee/GovTech Assign/node_modules/express/lib/application.js:618:24)
+    at Object.<anonymous> (/home/yuchao.tee/GovTech Assign/app.js:21:18)
+    at Module._compile (module.js:643:30)
+    at Object.Module._extensions..js (module.js:654:10)
+    at Module.load (module.js:556:32)
+{ teacher: 'teacherken@gmail.com',
+  students: [ 'studentjon@example.com' ] }
+teacherken@gmail.com
+[ 'studentjon@example.com' ]
+Insert into teacher_assigned_students values('teacherken@gmail.com','studentjon@example.com');
+[0mPOST /register/ [32m200 [0m2.666 ms - 302[0m
+{ teacher: 'teacherken@gmail.com',
+  students: [ 'studentjon@example.com' ] }
+teacherken@gmail.com
+[ 'studentjon@example.com' ]
+Insert into teacher_assigned_students values('teacherken@gmail.com','studentjon@example.com');
+[0mPOST /register/ [32m200 [0m1.629 ms - 302[0m
+[0mPOST /api/suspend [33m404 [0m16.463 ms - 1125[0m
+s_4@example.net
+OkPacket {
+  fieldCount: 0,
+  affectedRows: 0,
+  insertId: 0,
+  serverStatus: 2,
+  warningCount: 0,
+  message: '(Rows matched: 0  Changed: 0  Warnings: 0',
+  protocol41: true,
+  changedRows: 0 }
+[0mPOST /suspend [32m204 [0m5.814 ms - -[0m
+{ teacher: 'teacherken@gmail.com',
+  students: [ 'studentjon@example.com' ] }
+teacherken@gmail.com
+[ 'studentjon@example.com' ]
+Insert into teacher_assigned_students values('teacherken@gmail.com','studentjon@example.com');
+[0mPOST /register/ [32m200 [0m2.204 ms - 302[0m
+Ready on port 8185
+events.js:183
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE :::8185
+    at Object._errnoException (util.js:1022:11)
+    at _exceptionWithHostPort (util.js:1044:20)
+    at Server.setupListenHandle [as _listen2] (net.js:1351:14)
+    at listenInCluster (net.js:1392:12)
+    at Server.listen (net.js:1476:7)
+    at Function.listen (/home/yuchao.tee/GovTech Assign/node_modules/express/lib/application.js:618:24)
+    at Object.<anonymous> (/home/yuchao.tee/GovTech Assign/app.js:21:18)
+    at Module._compile (module.js:643:30)
+    at Object.Module._extensions..js (module.js:654:10)
+    at Module.load (module.js:556:32)
+{ teacher: 'teacherken@gmail.com',
+  students: [ 'studentjon@example.com' ] }
+teacherken@gmail.com
+[ 'studentjon@example.com' ]
+Insert into teacher_assigned_students values('teacherken@gmail.com','studentjon@example.com');
+[0mPOST /api/register/ [32m200 [0m83.854 ms - 302[0m
+{ teacher: 'teacherken@gmail.com',
+  students: [ 'studentjon@example.com' ] }
+teacherken@gmail.com
+[ 'studentjon@example.com' ]
+Insert into teacher_assigned_students values('teacherken@gmail.com','studentjon@example.com');
+[0mPOST /api/register/ [32m200 [0m2.847 ms - 302[0m
+s_4@example.net
+OkPacket {
+  fieldCount: 0,
+  affectedRows: 0,
+  insertId: 0,
+  serverStatus: 2,
+  warningCount: 0,
+  message: '(Rows matched: 0  Changed: 0  Warnings: 0',
+  protocol41: true,
+  changedRows: 0 }
+[0mPOST /api/suspend [32m204 [0m8.775 ms - -[0m
+s_4@example.net
+OkPacket {
+  fieldCount: 0,
+  affectedRows: 0,
+  insertId: 0,
+  serverStatus: 2,
+  warningCount: 0,
+  message: '(Rows matched: 0  Changed: 0  Warnings: 0',
+  protocol41: true,
+  changedRows: 0 }
+[0mPOST /api/suspend [32m204 [0m1.970 ms - -[0m
+{ teacher: 't_1@gmail.com',
+  students: 
+   [ 's_1@example.com',
+     's_2@example.com',
+     's_3@example.net',
+     's_4@example.net' ] }
+t_1@gmail.com
+[ 's_1@example.com',
+  's_2@example.com',
+  's_3@example.net',
+  's_4@example.net' ]
+Insert into teacher_assigned_students values('t_1@gmail.com','s_1@example.com'),('t_1@gmail.com','s_2@example.com'),('t_1@gmail.com','s_3@example.net'),('t_1@gmail.com','s_4@example.net');
+[0mPOST /api/register [32m200 [0m10.414 ms - 564[0m
+{ teacher: 't_1@gmail.com',
+  students: 
+   [ 's_1@example.com',
+     's_2@example.com',
+     's_3@example.net',
+     's_4@example.net' ] }
+t_1@gmail.com
+[ 's_1@example.com',
+  's_2@example.com',
+  's_3@example.net',
+  's_4@example.net' ]
+Insert into teacher_assigned_students values('t_1@gmail.com','s_1@example.com'),('t_1@gmail.com','s_2@example.com'),('t_1@gmail.com','s_3@example.net'),('t_1@gmail.com','s_4@example.net');
+[0mPOST /api/register [32m200 [0m1.546 ms - 564[0m
+{}
+[0mGET /teacher/t_1@gmail.com [32m200 [0m22.576 ms - 2[0m
+{}
+[0mGET /teacher/t_2@gmail.com [32m200 [0m1.454 ms - 2[0m
+{}
+[0mGET /teacher/t_3@gmail.com [32m200 [0m1.196 ms - 2[0m
+[0mGET /studentn/s_1@gmail.com [33m404 [0m654.719 ms - 1125[0m
+[0mGET /student/s_1@gmail.com [32m200 [0m2.108 ms - 2[0m
+[0mGET /student/s_1@example.com [32m200 [0m1.959 ms - 2[0m
+[0mGET /student/s_2@example.com [32m200 [0m1.570 ms - 2[0m
+[0mGET /student/s_3@example.com [32m200 [0m1.244 ms - 2[0m
+[0mGET /student/s_1@example.net [32m200 [0m1.099 ms - 2[0m
+[0mGET /student/s_2@example.net [32m200 [0m1.169 ms - 2[0m
+[0mGET /student/s_3@example.net [32m200 [0m1.127 ms - 2[0m
+[0mGET /student/s_4@example.net [32m200 [0m1.112 ms - 2[0m
+[0mGET /student/s_5@example.net [32m200 [0m1.138 ms - 2[0m
+[0mGET /student/s_6@example.net [32m200 [0m1.601 ms - 2[0m
+{ teacher: 't_1@gmail.com',
+  students: 
+   [ 's_1@example.com',
+     's_2@example.com',
+     's_3@example.net',
+     's_4@example.net' ] }
+t_1@gmail.com
+[ 's_1@example.com',
+  's_2@example.com',
+  's_3@example.net',
+  's_4@example.net' ]
+Insert into teacher_assigned_students values('t_1@gmail.com','s_1@example.com'),('t_1@gmail.com','s_2@example.com'),('t_1@gmail.com','s_3@example.net'),('t_1@gmail.com','s_4@example.net');
+[0mPOST /api/register [32m200 [0m224.251 ms - 564[0m
+[0mGET /api/teacher/t_1@gmail.com [33m404 [0m14.643 ms - 1125[0m
+[0mGET /api/teacher/t_1@gmail.com [33m404 [0m10.237 ms - 1125[0m
+{}
+[0mGET /teacher/t_1@gmail.com [32m200 [0m1.137 ms - 2[0m
+{}
+[0mGET /teacher/t_1@gmail.com [32m200 [0m1.044 ms - 2[0m
+{}
+[0mGET /Teacher/t_1@gmail.com [32m200 [0m1.044 ms - 2[0m
+[0mPOST /Teacher/teacherkenny@gmail.com [32m200 [0m3.761 ms - 2[0m
+{}
+[0mGET /teacher/t_1@gmail.com [32m200 [0m1.185 ms - 2[0m
+Ready on port 8185
+{}
+RowDataPacket { EMAIL: 'teacherkenny@gmail.com' }
+[0mGET /Teacher/teacherkenny@gmail.com [32m200 [0m40.842 ms - 36[0m
+[0mPOST /teacher/t_1@gmail.com [32m200 [0m8.211 ms - 2[0m
+[0mPOST /teacher/t_2@gmail.com [32m200 [0m566.200 ms - 2[0m
+[0mPOST /teacher/t_3@gmail.com [32m200 [0m5.666 ms - 2[0m
+[0mPOST /student/s_1@gmail.com [32m200 [0m5.712 ms - 127[0m
+[0mPOST /student/s_1@example.com [32m200 [0m4.647 ms - 127[0m
+[0mPOST /student/s_2@example.com [32m200 [0m8.827 ms - 127[0m
+[0mPOST /student/s_3@example.com [32m200 [0m4.556 ms - 127[0m
+[0mPOST /student/s_3@example.net [32m200 [0m3.449 ms - 127[0m
+[0mPOST /student/s_4@example.net [32m200 [0m4.372 ms - 127[0m
+[0mPOST /student/s_5@example.net [32m200 [0m4.844 ms - 127[0m
+[0mPOST /student/s_6@example.net [32m200 [0m3.562 ms - 127[0m
+{ teacher: 't_1@gmail.com',
+  students: 
+   [ 's_1@example.com',
+     's_2@example.com',
+     's_3@example.net',
+     's_4@example.net' ] }
+t_1@gmail.com
+[ 's_1@example.com',
+  's_2@example.com',
+  's_3@example.net',
+  's_4@example.net' ]
+Insert into teacher_assigned_students values('t_1@gmail.com','s_1@example.com'),('t_1@gmail.com','s_2@example.com'),('t_1@gmail.com','s_3@example.net'),('t_1@gmail.com','s_4@example.net');
+[0mPOST /api/register [32m204 [0m194.336 ms - -[0m
+{ teacher: 't_2@gmail.com',
+  students: [ 's_3@example.net', 's_4@example.net', 's_5@example.net' ] }
+t_2@gmail.com
+[ 's_3@example.net', 's_4@example.net', 's_5@example.net' ]
+Insert into teacher_assigned_students values('t_2@gmail.com','s_3@example.net'),('t_2@gmail.com','s_4@example.net'),('t_2@gmail.com','s_5@example.net');
+[0mPOST /api/register [32m204 [0m4.469 ms - -[0m
+{ teacher: 't_3@gmail.com',
+  students: [ 's_4@example.net', 's_5@example.net', 's_6@example.net' ] }
+t_3@gmail.com
+[ 's_4@example.net', 's_5@example.net', 's_6@example.net' ]
+Insert into teacher_assigned_students values('t_3@gmail.com','s_4@example.net'),('t_3@gmail.com','s_5@example.net'),('t_3@gmail.com','s_6@example.net');
+[0mPOST /api/register [32m204 [0m5.224 ms - -[0m
+{ teacher: 't_3@gmail.com',
+  students: [ 's_4@example.net', 's_5@example.net', 's_6@example.net' ] }
+t_3@gmail.com
+[ 's_4@example.net', 's_5@example.net', 's_6@example.net' ]
+Insert into teacher_assigned_students values('t_3@gmail.com','s_4@example.net'),('t_3@gmail.com','s_5@example.net'),('t_3@gmail.com','s_6@example.net');
+[0mPOST /api/register [32m200 [0m2.618 ms - 346[0m
+{ teacher: 't_3gmail.com',
+  students: [ 's_4@example.net', 's_5@example.net', 's_6@example.net' ] }
+t_3gmail.com
+[ 's_4@example.net', 's_5@example.net', 's_6@example.net' ]
+[0mPOST /api/register [33m400 [0m0.658 ms - 68[0m
+{ teacher: 't_3@gmail.com',
+  students: [ 's_4@example.net', 's_5@example.net', 's_6example.net' ] }
+t_3@gmail.com
+[ 's_4@example.net', 's_5@example.net', 's_6example.net' ]
+[0mPOST /api/register [33m400 [0m0.652 ms - 79[0m
+[ 't_1@gmail.com', 't_2@gmail.com' ]
+{}
+[{"email_student":"s_3@example.net"},{"email_student":"s_4@example.net"}]
+s_3@example.net
+s_4@example.net
+{"Students":["s_3@example.net","s_4@example.net"]}
+[0mGET /api/commonstudents?teacher=t_1@gmail.com&teacher=t_2@gmail.com [32m200 [0m22.506 ms - 58[0m
+[ 't_1@gmail.com', 't_2@gmail.com' ]
+{}
+[{"email_student":"s_3@example.net"},{"email_student":"s_4@example.net"}]
+s_3@example.net
+s_4@example.net
+{"Students":["s_3@example.net","s_4@example.net"]}
+[0mGET /api/commonstudents?teacher=t_1@gmail.com&teacher=t_2@gmail.com [32m200 [0m1.223 ms - 58[0m
+{ teacher: 't_3@gmail.com',
+  students: [ 's_4@example.net', 's_5@example.net', 's_6example.net' ] }
+t_3@gmail.com
+[ 's_4@example.net', 's_5@example.net', 's_6example.net' ]
+[0mPOST /api/register [33m400 [0m0.629 ms - 79[0m
+t_1@gmail.com
+{}
+[{"email_student":"s_1@example.com"},{"email_student":"s_2@example.com"},{"email_student":"s_3@example.net"},{"email_student":"s_4@example.net"}]
+s_1@example.com
+s_2@example.com
+s_3@example.net
+s_4@example.net
+{"Students":["s_1@example.com","s_2@example.com","s_3@example.net","s_4@example.net"]}
+[0mGET /api/commonstudents?teacher=t_1@gmail.com [32m200 [0m4.502 ms - 86[0m
+t_1@gmail.com
+{}
+[{"email_student":"s_1@example.com"},{"email_student":"s_2@example.com"},{"email_student":"s_3@example.net"},{"email_student":"s_4@example.net"}]
+s_1@example.com
+s_2@example.com
+s_3@example.net
+s_4@example.net
+{"Students":["s_1@example.com","s_2@example.com","s_3@example.net","s_4@example.net"]}
+[0mGET /api/commonstudents?teacher=t_1@gmail.com [32m200 [0m1.231 ms - 86[0m
+[ 't_1@gmail.com', 't_2@gmail.com' ]
+{}
+[{"email_student":"s_3@example.net"},{"email_student":"s_4@example.net"}]
+s_3@example.net
+s_4@example.net
+{"Students":["s_3@example.net","s_4@example.net"]}
+[0mGET /api/commonstudents?teacher=t_1@gmail.com&teacher=t_2@gmail.com [32m200 [0m1.622 ms - 58[0m
+t_1@gmail.com
+{}
+[{"email_student":"s_1@example.com"},{"email_student":"s_2@example.com"},{"email_student":"s_3@example.net"},{"email_student":"s_4@example.net"}]
+s_1@example.com
+s_2@example.com
+s_3@example.net
+s_4@example.net
+{"Students":["s_1@example.com","s_2@example.com","s_3@example.net","s_4@example.net"]}
+[0mGET /api/commonstudents?teacher=t_1@gmail.com [32m200 [0m1.159 ms - 86[0m
+[0mPOST /api/retrieveForNotifications [33m404 [0m696.450 ms - 1125[0m
+[0mPOST /api/retrievefornotifications [33m404 [0m13.699 ms - 1125[0m
+t_1@gmail.com
+Hello @extrastudent1@example.net @s_4@example.net @s_3@example.net @s_5@example.net
+Processing notification for @mentions...
+[ '@extrastudent1@example.net',
+  '@s_4@example.net',
+  '@s_3@example.net',
+  '@s_5@example.net' ]
+[0mPOST /api/notifications [33m400 [0m1.221 ms - 79[0m
+t_1@gmail.com
+Hello @s_4@example.net @s_3@example.net @s_5@example.net
+Processing notification for @mentions...
+[ '@s_4@example.net', '@s_3@example.net', '@s_5@example.net' ]
+[0mPOST /api/notifications [33m400 [0m0.689 ms - 79[0m
+[0mPOST /api/notifications [33m400 [0m10.509 ms - 917[0m
+t_1@gmail.com
+Hello @s_4@example.net
+Processing notification for @mentions...
+[ '@s_4@example.net' ]
+[0mPOST /api/notifications [33m400 [0m0.564 ms - 79[0m
+t_1@gmail.com
+Hello @s_1@example.com
+Processing notification for @mentions...
+[ '@s_1@example.com' ]
+[0mPOST /api/notifications [33m400 [0m0.665 ms - 79[0m
+t_1@gmail.com
+Hello
+Processing notification for @mentions...
+null
+[0mPOST /api/notifications [31m500 [0m15.482 ms - 1235[0m
+t_1@gmail.com
+Hello @s_1@example.com
+Processing notification for @mentions...
+[ '@s_1@example.com' ]
+[0mPOST /api/notifications [33m400 [0m0.593 ms - 79[0m
+s_4@example.net
+OkPacket {
+  fieldCount: 0,
+  affectedRows: 1,
+  insertId: 0,
+  serverStatus: 2,
+  warningCount: 0,
+  message: '(Rows matched: 1  Changed: 1  Warnings: 0',
+  protocol41: true,
+  changedRows: 1 }
+[0mPOST /api/suspend [32m204 [0m4.945 ms - -[0m
+[0mPOST /notifications [33m404 [0m1066.409 ms - 1125[0m
+teacherken@gmail.com
+Hello students! @studentagnes@example.com
+Processing notification for @mentions...
+[ '@studentagnes@example.com' ]
+[0mPOST /api/notifications [33m400 [0m2.198 ms - 79[0m
+[0mGET /student [32m200 [0m29.664 ms - 572[0m
+t_1@gmail.com
+Hello students! @s_1@example.com
+Processing notification for @mentions...
+[ '@s_1@example.com' ]
+[0mPOST /api/notifications [33m400 [0m0.581 ms - 79[0m
+t_1@gmail.com
+Hello students! @studentjon@example.com
+Processing notification for @mentions...
+[ '@studentjon@example.com' ]
+[0mPOST /api/notifications [33m400 [0m0.618 ms - 79[0m
+Ready on port 8185

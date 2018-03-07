@@ -6,26 +6,34 @@ var Register = {
     getRegisterByTeacher: function(email, callback) {  
         return db.query("select email_student from teacher_assigned_students where email_teacher=?", [email], callback);  
     },
+    // getRegisterByMultiTeacher: function(email, callback) {  
+    //     var queryString = ("select email_student from teacher_assigned_students where email_teacher = '" + email[0] + "'");
+    //     for(var i = 1; i<email.length; ++i){
+    //         queryString += (" or email_teacher = '"+email[i]+"'");
+    //     }
+    //     queryString += "group by email_student having count(email_student) >1;";
+    //     return db.query(queryString, callback);  
+    // },  
     getRegisterByMultiTeacher: function(email, callback) {  
-        var queryString = ("select email_student from teacher_assigned_students where email_teacher = '" + email[0] + "'");
-        for(var i = 1; i<email.length; ++i){
-            queryString += (" or email_teacher = '"+email[i]+"'");
+        arrayLength = [];
+        for(var i = 0; i<email.length; ++i){
+            arrayLength.push('?');
         }
-        queryString += "group by email_student having count(email_student) >1;";
-        return db.query(queryString, callback);  
-    },  
+        var queryString = ("select email_student from teacher_assigned_students where email_teacher IN (");
+        queryString += arrayLength.join(',');
+        queryString += ") group by email_student having count(email_student) >=?;";
+        email.push(email.length);
+        console.log(queryString);
+        console.log(email);
+        return db.query(queryString, email, callback);  
+    }, 
     registerStudent: function(email_teacher, email_student, callback) {  
         return db.query("Insert into teacher_assigned_students values(?,?)", [email_teacher, email_student], callback);
     },
-    registerMultiStudent: function(email_teacher, email_students, callback){
-        var queryString = ("Insert into teacher_assigned_students values");
-        for(var i = 0; i<email_students.length; ++i){
-            queryString += "('"+email_teacher+"','"+email_students[i]+"'),";
-        }
-        queryString = queryString.slice(0,-1);
-        queryString += ";";
+    registerMultiStudent: function(insertList, callback){
+        var queryString = ("Insert into teacher_assigned_students (email_teacher, email_student) values ?");
         console.log(queryString);
-        return db.query(queryString,callback);
+        return db.query(queryString, [insertList],callback);
     },
 
     getActiveStudentRegisterByTeacher: function(email_teacher, email_students, callback){
