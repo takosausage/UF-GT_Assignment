@@ -42,7 +42,7 @@ app.use('/Student', Student);
 app.use('/api/register', Register);
 app.use('/api/commonstudents', CommonStudent);
 app.use('/api/suspend', Suspend);
-app.use('/api/notifications', Notification);
+app.use('/api/retrievefornotifications', Notification);
 
 app.disable( 'x-powered-by' ) ;
 

@@ -22,7 +22,7 @@ var Notification = {
         }
         queryString += (");");
         console.log(queryString);
-        return db.query(queryString, callback);  
+        return db.query(queryString, consolidatedArray, callback);  
     } 
     // getTeacherById: function(email, callback) {  
     //     return db.query("select * from roster_teacher where EMAIL=?", [email], callback);  
